@@ -3164,7 +3164,7 @@ INSERT INTO `oc_setting` (`store_id`, `code`, `key`, `value`, `serialized`) VALU
 (0, 'config', 'config_geocode', '', 0),
 (0, 'config', 'config_owner', 'Иванов Иван', 0),
 (0, 'config', 'config_address', 'г. Москва, ул. Ленина 10 оф. 32', 0),
-(0, 'config', 'config_name', 'Интернет магазин Onecom', 0),
+(0, 'config', 'config_name', 'Интернет магазин Opencart', 0),
 (0, 'config', 'config_seo_url', '0', 0),
 (0, 'config', 'config_file_max_size', '300000', 0),
 (0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
