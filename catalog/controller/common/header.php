@@ -60,7 +60,9 @@ class ControllerCommonHeader extends Controller {
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['logged'] = $this->customer->isLogged();
 		$data['account'] = $this->url->link('account/account', '', true);
-		$data['register'] = $this->url->link('account/register', '', true);
+		// $data['register'] = $this->url->link('account/register', '', true);
+		
+		$data['register'] = $this->url->link('common/home', '', true);
 		$data['login'] = $this->url->link('account/login', '', true);
 		$data['order'] = $this->url->link('account/order', '', true);
 		$data['transaction'] = $this->url->link('account/transaction', '', true);
@@ -74,7 +76,7 @@ class ControllerCommonHeader extends Controller {
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
-		$data['cart'] = $this->load->controller('common/cart');
+		// $data['cart'] = $this->load->controller('common/cart');
 		$data['menu'] = $this->load->controller('common/menu');
 
 		return $this->load->view('common/header', $data);
