@@ -31,8 +31,11 @@
           <tr>
             <td>{{ text_name }}</td>
             {% for product in products %}
-            <td><a href="{{ product.href }}"><strong>{{ product.name }}</strong></a></td>
-            {% endfor %} </tr>
+            <td>
+              <a href="{{ product.href }}"><strong>{{ product.name }}</strong></a>
+            </td>
+            {% endfor %}
+          </tr>
           <tr>
             <td>{{ text_image }}</td>
             {% for product in products %}
@@ -96,7 +99,8 @@
             <td colspan="{{ products|length + 1 }}"><strong>{{ attribute_group.name }}</strong></td>
           </tr>
         </thead>
-        {% for key, attribute in attribute_group.attribute %}
+        {#
+        {% for key, attribute in attribute_group.attribute %} 
         <tbody>
           <tr>
             <td>{{ attribute.name }}</td>
@@ -109,13 +113,36 @@
             {% endfor %}
           </tr>
         </tbody>
-        {% endfor %}
+        ORG #}
+
+        <tbody>
+          <tr>
+            <td></td>
+            {# {% for product in products %} #}
+             {# {% if attribute.name %} #}
+            {# <td> {{ attribute.name }}</td> #}
+            {# {% else %}  #}
+            {# {% endif %} #}
+            {# {% endfor %} #}
+            
+            {# {% for product in products %} #}
+            
+            {% for key, attribute in attribute_group.attribute %}
+            <td> {{ attribute.name }}</td>
+            {% endfor %}
+            {# {% endfor %} #}
+          </tr>
+        </tbody>
+
+        {# {% endfor %} #}
         {% endfor %}
         <tr>
           <td></td>
           {% for product in products %}
-          <td><input type="button" value="{{ button_cart }}" class="btn btn-primary btn-block" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');" />
-            <a href="{{ product.remove }}" class="btn btn-danger btn-block">{{ button_remove }}</a></td>
+          <td>
+            {# <input type="button" value="{{ button_cart }}" class="btn btn-primary btn-block" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');" /> #}
+            <a href="{{ product.remove }}" class="btn btn-danger btn-block">{{ button_remove }}</a>
+            </td>
           {% endfor %} </tr>
       </table>
       {% else %}

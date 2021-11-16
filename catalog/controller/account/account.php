@@ -6,7 +6,7 @@ class ControllerAccountAccount extends Controller {
 
 			// $this->response->redirect($this->url->link('account/login', '', true));
 			
-			$this->response->redirect($this->url->link('common/home', '', true));
+			$this->response->redirect($this->url->link('common/home', '', true)); //Delete it for turn off redirect
 		}
 
 		$this->load->language('account/account');

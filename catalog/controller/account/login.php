@@ -153,7 +153,7 @@ class ControllerAccountLogin extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		$this->response->setOutput($this->load->view('account/login', $data));
-		$this->response->redirect($this->url->link('common/home', '', true));
+		$this->response->redirect($this->url->link('common/home', '', true)); //Delete it for turn off redirect
 	}
 
 	protected function validate() {

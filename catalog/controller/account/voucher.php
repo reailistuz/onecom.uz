@@ -3,6 +3,7 @@ class ControllerAccountVoucher extends Controller {
 	private $error = array();
 
 	public function index() {
+		$this->response->redirect($this->url->link('common/home', '', true)); //Delete it for turn off redirect
 		$this->load->language('account/voucher');
 
 		$this->document->setTitle($this->language->get('heading_title'));
