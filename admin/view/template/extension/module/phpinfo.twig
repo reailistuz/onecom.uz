@@ -1,0 +1,66 @@
+{{ header }}{{ column_left }} 
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-right">
+                <a href="{{ refresh }}" data-toggle="tooltip" title="{{ button_refresh }}" class="btn btn-success"><i class="fa fa-refresh"></i> {{ button_refresh }}</a></div>
+            <h1>{{ heading_title }}</h1>
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %} 
+                    <li><a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a></li>
+                    {% endfor %} 
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        {% if (error_warning) %} 
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }} 
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %} 
+        {% if (success) %} 
+            <div class="alert alert-success"><i class="fa fa-exclamation-circle"></i> {{ success }} 
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-info-circle"></i> {{ heading_title }}</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab-main" data-toggle="tab">{{ tab_main }}</a></li>
+                    <li><a href="#tab-info" data-toggle="tab">{{ tab_info }}</a></li>
+                </ul>  
+
+                <div class="tab-content">  
+                    <!-- tab main -->
+                    <div class="tab-pane active" id="tab-main"> 
+                        {{ php_info }} 
+                    </div>
+                    <!-- end of tab main -->
+
+                    <!-- tab info -->
+                    <div class="tab-pane text-center" id="tab-info">           
+                        <h3>{{ heading_title }}</h3>
+                        <h4>{{ info_version }}</h4>
+                        <h4>{{ info_about }}</h4>
+                        <h4>{{ info_developer }}</h4>
+                        <p>{{ info_coffee }}</p>
+                        <p>{{ info_support }}</p>
+                        <hr>
+                        <h4><a href="https://opnotes.eu" target="_blank"><strong>OPNOTES.EU</strong></a></h4>
+                    </div> 
+                    <!-- end of tab info -->
+                </div>   
+                       
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#language a:first').tab('show');
+    });
+</script>  
+</div>                      
+{{ footer }}
